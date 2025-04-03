@@ -1,0 +1,16 @@
+def sum_series_1(epsilon):
+    S, n = 0, 1
+    while (term := 1 / n) >= epsilon:
+        S += term
+        n += 1
+    return S
+
+def sum_series_2(epsilon, x):
+    P, n = 0, 1
+    while (term := (-1) ** n * x ** n / n) >= epsilon:
+        P += term
+        n += 1
+    return P
+
+print("S1 =", sum_series_1(0.01))
+print("S2 =", sum_series_2(0.01, 0.5))
